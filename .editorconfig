@@ -1,5 +1,6 @@
 root = true
 
+# Cau hinh mac dinh cho tat ca file trong du an.
 [*]
 charset = utf-8
 end_of_line = lf
@@ -8,10 +9,41 @@ indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# Cau hinh rieng cho Kotlin va Kotlin Gradle script.
 [*.{kt,kts}]
-ktlint_code_style = android_studio
-ktlint_function_naming_ignore_when_annotated_with = Composable
-max_line_length = 120
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
 
+# Khong cho phep trailing comma trong khai bao ham/class va khi goi ham.
+ij_kotlin_allow_trailing_comma = false
+ij_kotlin_allow_trailing_comma_on_call_site = false
+
+# Su dung import truc tiep, khong gom nhom import theo layout dac biet.
+ij_kotlin_imports_layout = *
+
+# Nhung package ma IntelliJ/Android Studio duoc phep dung wildcard import.
+ij_kotlin_packages_to_use_import_on_demand = java.util.*, kotlinx.android.synthetic.**
+
+# Dung code style Android Studio de phu hop voi convention Android/Compose.
+ktlint_code_style = android_studio
+
+# Cho phep ten ham Composable viet PascalCase, vi day la convention cua Compose.
+ktlint_function_naming_ignore_when_annotated_with = Composable
+
+# Giu cach wrap body expression cua function theo mac dinh cua ktlint.
+ktlint_function_signature_body_expression_wrapping = default
+
+# Khong ep function signature xuong nhieu dong theo so luong tham so.
+ktlint_function_signature_rule_force_multiline_when_parameter_count_greater_or_equal_than = unset
+
+# Van kiem tra ten identifier nam trong backtick.
+ktlint_ignore_back_ticked_identifier = false
+
+# Gioi han do dai dong Kotlin/KTS o 160 ky tu.
+max_line_length = 160
+
+# File YAML thuong dung indent 2 spaces.
 [*.{yml,yaml}]
 indent_size = 2
